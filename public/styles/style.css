@@ -36,7 +36,7 @@ h1 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    max-width: 1300px;
+    max-width: 1500px;
     width: 80%;
     margin: 70px auto 0;
     background: rgb(59, 59, 59);
@@ -67,6 +67,26 @@ h1 {
 /* ########  FORMULAIRE ######## */
 
 /* ------ Formulaire avec image ######    OK   --------- */
+
+
+.rappel{
+    border-radius: 10px;
+    margin-left: 40%;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    width: auto;
+    padding: 54px;
+    background-color: #F2A71C;
+}
+/* #boutonFermeture{
+    color: #F2A71C;
+    background-color: transparent;
+    border-color: 3px solid ;
+    border: #F2A71C;
+    padding: 10px;
+} */
+#id01{
+    background-color: rgba(51, 51, 51, 0.342);
+}
 section {
     padding: 10px;
     position: relative;
@@ -80,7 +100,7 @@ section .imgBox {
     width: 50%;
     height: 100%;
     background: linear-gradient(transparent, #F2A71C), url(antique.jpg), no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
 }
 
@@ -92,7 +112,14 @@ section .contentBox {
     height: 100%;
 
 }
+.closure{
+    color: #F2A71C;
+    width: 46px;
+    height: 51px;
+    border-color: 2px solid ;
+    background-color: rgb(46, 46, 45);
 
+}
 section .contentBox .formBox h2 {
     color: aqua;
     font-weight: 600;
@@ -207,7 +234,9 @@ textarea {
     transition: all .5s;
 
 }
-
+.sideParent{
+    background-color: #333;
+}
 #btnprim {
     width: 25px;
     height: 20px;
@@ -230,15 +259,15 @@ textarea {
     border-radius: 5px;
 }
 li{
-    display: block;
-    height: 100%;
+    /* display: block; */
+    height: 60px;
     width: 100%;
     line-height: 65px;
     font-size: 20px;
     color: white;
     padding-left: 40px;
     box-sizing: border-box;
-    border-top: 1px solid orangered;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #F2A71C;
+    /* border-top: 1px solid black; */
     transition: .4s;
 }

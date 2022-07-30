@@ -1,16 +1,16 @@
 @extends('layouts.main')
 @section('content')
 
-
 <button id="btnprim" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"> <label for="check">
         <i class="fas fa-bars" id="btno"></i>
 
     </label>
 </button>
 
-<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+<div  class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Objet d'une époque</h5>
+        <h5 class="offcanvas-title" id="offcanvasScrollingLabel"><strong>Objet d'une époque</strong></h5>
         <button class="fermeture" type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <!-- menu déroulant  -->

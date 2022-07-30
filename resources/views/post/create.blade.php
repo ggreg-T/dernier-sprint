@@ -1,27 +1,36 @@
-@extends('layouts.main')
+@extends('layouts.app')
 @section('content')
 
-<h1><strong> Formulaire 2</strong></h1>
-<br><br><br><br><br><br><br><br><br><br>
+<h1><strong> Formulaire </strong></h1>
+<br><br><br><br><br>
 
 <!-- capture d'erreur  -->
 <div class="my-5">
     @foreach ($errors->all() as $error)
-        <span class="block text-red-500" >{{ $error }}</span>
+    <span class="block text-red-500">{{ $error }}</span>
     @endforeach
 </div>
 
 <!-- bouton d'appel formulaire -->
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
-Sign Up
+<button class="rappel" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
+    Nous avons oublié plein de choses,
+    <br>
+    mais peut être que "VOUS" pouvez nous le rappeler!
+    <br>
+    Dites le nous en cliquant ici!
 </button>
 
 <div id="id01" class="modal">
-    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
 
+    <!-- <div class="closure" > -->
+    <!-- <span > -->
+    <button onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal" id="boutonFermeture" type="button">Fermer</button>
+    <!-- </span> -->
+    <!-- </div> -->
+    <!-- formulaire  -->
     <section>
         <div class="imgBox">
-            <img src="https://unsplash.com/photos/mk7D-4UCfmg" alt="pour">
+            <img src="{{URL::asset('/image/antique.jpg')}}" alt="pour">
         </div>
 
         <div class="contentBox">
@@ -58,24 +67,24 @@ Sign Up
 
                     <div class="inputBx">
                         <span>Image</span>
-                        <select id="category"  name="category" >
+                        <select id="category" name="category">
                             @foreach ($categories as $category)
 
-                            <option value="{{$category->id}}" >
-                                {{ $category->name }} 
+                            <option value="{{$category->id}}">
+                                {{ $category->name }}
                             </option>
                             @endforeach
                         </select>
                     </div>
 
-                      <!-- Bouton submit  -->
-                      <div class="inputBx">
-                        <input type="submit" value="Valider"> 
-                    </div>
-                    
-                       <!-- lien pour s'enregistrer  -->
+                    <!-- Bouton submit  -->
                     <div class="inputBx">
-                      <p>Vous n'avez pas de compte? <a href="{{ route('register') }}">Créer un compte</a></p>
+                        <input type="submit" value="Valider">
+                    </div>
+
+                    <!-- lien pour s'enregistrer  -->
+                    <div class="inputBx">
+                        <p>Vous n'avez pas de compte? <a href="{{ route('register') }}">Créer un compte</a></p>
                     </div>
 
 
@@ -83,11 +92,11 @@ Sign Up
             </div>
         </div>
     </section>
-  
+
 </div>
 
 
-   
+
 </div>
 @endsection
 
