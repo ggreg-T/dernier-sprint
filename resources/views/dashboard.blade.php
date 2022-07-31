@@ -33,6 +33,7 @@
     </div>
 </div>
 
+<!-- Citation  -->
 <div class="body">
     <div class="citation">
         <p class="phrase"> NOS RICHESSES, CE SONT NOS SOUVENIRS.</p>
@@ -41,4 +42,5 @@
         </p>
     </div>
 </div>
+<!-- fin citation  -->
 @endsection

@@ -10,27 +10,45 @@ body {
 }
 
 main {
-    background: linear-gradient(-90 #333, white);
+    /* background: linear-gradient(-90 #333, white); */
+    background: #3d3d3c;
+}
+.card text-center{
+    background: #525251;
+}
+/* ########  ACCUEIL ######## */
+.boutonMenu {
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
-/* ########  ACCUEIL ######## */
 h1 {
     font-size: 60px;
     color: rgb(209, 195, 4);
     text-align: center;
 }
 
+.aindex {
+    color: #333;
+    text-decoration: none;
+}
+
 .creer {
     background-color: #F2A71C;
-    color: #333;
+    border-radius: 10px;
+    border: 2px solid #1d1d1c;
+    padding: 5px 10px 5px 10px;
+    margin: 10px;
+    /* color: #333; */
     /* position: absolute; */
     width: 429px;
     height: 48px;
-    left: 756px;
-    top: 40px;
+    /* left: 756px;
+    top: 40px; */
 }
 
-.c-body{
+.c-body {
     color: #F2A71C;
 }
 
@@ -41,20 +59,22 @@ h1 {
     max-width: 1500px;
     width: 80%;
     margin: 70px auto 0;
-    background: rgb(59, 59, 59);
+    background: rgb(20, 20, 20);
     border-style: solid #F2A71C;
     /* border-width: 2rem; */
     border-radius: 10px;
 }
-.cardimg{
+
+.cardimg {
     height: 50px;
     width: 50px;
 }
+
 .item {
     /* width: 500px;
     height: 400px; */
-    
-    width: 300px; 
+
+    width: 300px;
     height: 300px;
     margin: 10px;
     overflow: hidden;
@@ -67,11 +87,11 @@ h1 {
     /* filter: drop-shadow(0 0 5px blue); */
 }
 
- .item img {
+.item img {
     width: 60%;
     height: auto;
 
-} 
+}
 
 /* ########  FORMULAIRE ######## */
 
@@ -134,7 +154,7 @@ section .contentBox {
 }
 
 section .contentBox .formBox h2 {
-    color: aqua;
+    color: #F2A71C;
     font-weight: 600;
     font-size: 1.5rem;
     text-transform: uppercase;
@@ -169,7 +189,7 @@ textarea {
     width: 100%;
     padding: 10px 20px;
     font-weight: 400;
-    border: 1px solid #F2A71C;
+    border: 2px solid #F2A71C;
     letter-spacing: 1px;
     outline: none;
     background-color: transparent;
@@ -189,6 +209,10 @@ textarea {
 
 .inputBx input[type="submit"]:hover {
     background-color: darkolivegreen;
+    /* color: white;
+outline: 0;
+border: 0; */
+
 
 }
 
@@ -255,11 +279,13 @@ textarea {
     bottom: 50px;
     left: 50px;
 }
+
 .phrase {
 
     font-size: clamp(1.5rem, 3vw, 4.5rem);
 }
-.auteur{
+
+.auteur {
     margin-right: 30px;
     font-size: clamp(1.5rem, 3vw, 4.5rem);
 }

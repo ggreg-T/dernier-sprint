@@ -3,11 +3,12 @@
 
 
 
-<!-- page d'accueil  -->
-<!-- <div class="creer"><a href="{{ route('posts.create') }}">Créer un post</a></div>
+<!-- page d'accueil -->
+<div class="boutonMenu">
+<div class="creer"><a class="aindex" href="{{ route('posts.create') }}">Créer un post</a></div>
 
-<div class="creer"><a href="{{ route('dashboard') }}">Dashboard</a></div> -->
-
+<div class="creer"><a  class="aindex" href="{{ route('dashboard') }}">Dashboard</a></div>
+</div>
 <div class="galerie">
 
   @foreach ($posts as $post)
