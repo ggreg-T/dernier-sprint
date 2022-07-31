@@ -10,7 +10,7 @@ body {
 }
 
 main {
-    background: linear-gradient(#333, white);
+    background: linear-gradient(-90 #333, white);
 }
 
 /* ########  ACCUEIL ######## */
@@ -69,7 +69,7 @@ h1 {
 /* ------ Formulaire avec image ######    OK   --------- */
 
 
-.rappel{
+.rappel {
     border-radius: 10px;
     margin-left: 40%;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
@@ -77,6 +77,7 @@ h1 {
     padding: 54px;
     background-color: #F2A71C;
 }
+
 /* #boutonFermeture{
     color: #F2A71C;
     background-color: transparent;
@@ -84,9 +85,10 @@ h1 {
     border: #F2A71C;
     padding: 10px;
 } */
-#id01{
+#id01 {
     background-color: rgba(51, 51, 51, 0.342);
 }
+
 section {
     padding: 10px;
     position: relative;
@@ -112,14 +114,16 @@ section .contentBox {
     height: 100%;
 
 }
-.closure{
+
+.closure {
     color: #F2A71C;
     width: 46px;
     height: 51px;
-    border-color: 2px solid ;
+    border-color: 2px solid;
     background-color: rgb(46, 46, 45);
 
 }
+
 section .contentBox .formBox h2 {
     color: aqua;
     font-weight: 600;
@@ -146,7 +150,7 @@ textarea {
     font-size: 16px;
     margin-bottom: 5px;
     display: inline-block;
-    color: #607db8;
+    color: #F2A71C;
     font-weight: 300;
     letter-spacing: 1px;
 
@@ -156,7 +160,7 @@ textarea {
     width: 100%;
     padding: 10px 20px;
     font-weight: 400;
-    border: 1px solid #607db8;
+    border: 1px solid #F2A71C;
     letter-spacing: 1px;
     outline: none;
     background-color: transparent;
@@ -181,13 +185,13 @@ textarea {
 
 .remember {
     margin-bottom: 10px;
-    color: #607db8;
+    color: #F2A71C;
     font-weight: 400;
     font-size: 14px;
 }
 
 .inputBx input p {
-    color: #607db8;
+    color: #F2A71C;
     text-align: center;
 }
 
@@ -227,38 +231,58 @@ textarea {
 .body {
     /* background: url("https://images.unsplash.com/photo-1518893883800-45cd0954574b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=434&q=80") no-repeat; */
     background: url(/image/smallpath.jpg) no-repeat;
-
+    position: relative;
     height: 100vh;
-    background-position: center;
+    background-position: right;
     background-size: contain;
+    margin-right: 100px;
     transition: all .5s;
-
 }
-.sideParent{
+
+.citation {
+    font-size: 2rem;
+    color: #F2A71C;
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+}
+.phrase {
+
+    font-size: clamp(1.5rem, 3vw, 4.5rem);
+}
+.auteur{
+    margin-right: 30px;
+    font-size: clamp(1.5rem, 3vw, 4.5rem);
+}
+
+.sideParent {
     background-color: #333;
 }
+
 #btnprim {
     width: 25px;
     height: 20px;
-    color: #F2A71C;;
+    color: #F2A71C;
+    ;
     background-color: #0d6efd05;
     border-color: #F2A71C;
     margin-left: 70px;
     margin-top: 20px;
-
 }
 
 .fermeture {
     width: 25px;
     height: 20px;
-    color: #F2A71C;;
+    color: #F2A71C;
+    ;
     background-color: #0d6efd05;
     border-color: #F2A71C;
     margin-left: 70px;
     margin-top: 20px;
     border-radius: 5px;
 }
-li{
+
+.liSidebar {
     /* display: block; */
     height: 60px;
     width: 100%;

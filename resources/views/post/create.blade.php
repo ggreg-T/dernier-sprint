@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.main')
 @section('content')
 
 <h1><strong> Formulaire </strong></h1>
@@ -29,10 +29,11 @@
     <!-- </div> -->
     <!-- formulaire  -->
     <section>
+        <!-- partie image  -->
         <div class="imgBox">
             <img src="{{URL::asset('/image/antique.jpg')}}" alt="pour">
         </div>
-
+    <!-- partie formulaire  -->
         <div class="contentBox">
             <div class="formBox">
                 <h2>Renseigne ton objet</h2>
@@ -100,16 +101,3 @@
 </div>
 @endsection
 
-<!-- 
-   categorie 
-   <div class="inputBx">
-                    <label for="category" value="Catégories"><b>Category</b></label>
-                    <select id="category"  name="category" >
-                        @foreach ($categories as $category)
-
-                        <option value="{{$category->id}}" >
-                            {{ $category->name }} 
-                        </option>
-                        @endforeach
-                    </select>
-                </div> -->

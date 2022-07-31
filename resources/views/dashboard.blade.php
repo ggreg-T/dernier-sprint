@@ -1,13 +1,10 @@
-@extends('layouts.main')
+@extends('layouts.app')
 @section('content')
 
-<button id="btnprim" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"> <label for="check">
-        <i class="fas fa-bars" id="btno"></i>
-
-    </label>
+<button id="btnprim" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
 </button>
 
-<div  class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
 
     <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasScrollingLabel"><strong>Objet d'une époque</strong></h5>
@@ -16,37 +13,32 @@
     <!-- menu déroulant  -->
     <div class="offcanvas-body">
 
-        <p>Ravivez la flamme des souvenirs.</p>
+        <p>Ravivez la flamme de vos souvenirs.</p>
 
         <ul>
-            <li>
+            <li class="liSidebar">
                 <a href="{{ route('posts.index') }}">Visiter </a>
             </li>
-            <li>
+            <li class="liSidebar">
                 <a href="#">À propos</a>
             </li>
-            <li>
+            <li class="liSidebar">
                 <a href="{{ route('login') }}">Se connecter</a>
             </li>
-            <li>
+            <li class="liSidebar">
                 <a href="{{ route('register') }}">S'enregistrer</a>
             </li>
         </ul>
-       
+
     </div>
 </div>
-<!-- Début sidebar  -->
-<section class="body">
-    <!-- <input type="checkbox" id="check">
-    <div class="sidebar">
-        <header>Objet d'une époque</header>
-        <ul>
-            <li><a href="#">Visiter</a></li>
-            <li><a href="#">Audit</a></li>
-            <li><a href="#">Se connecter</a></li>
-            <li><a href="#">S'enregistrer</a></li>
-        </ul>
-    </div> -->
-</section>
 
-<!-- Fin sidebar -->
+<div class="body">
+    <div class="citation">
+        <p class="phrase"> NOS RICHESSES, CE SONT NOS SOUVENIRS.</p>
+            <hr style="width:50%">          
+                                 <p class="auteur">   François HERTEL
+        </p>
+    </div>
+</div>
+@endsection
