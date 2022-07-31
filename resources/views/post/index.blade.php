@@ -18,24 +18,34 @@
   </div>
   @endif <div class="item">
 
-    <a href="{{ route('posts.show', $post)}}"><img src="{{ asset('storage/' . $post->image)}}" class="cardimg" alt="..."></a>
+    <a href="{{ route('posts.show', $post)}}"><img src="{{ asset('storage/' . $post->image)}}" class="cardimg" alt="...">
+    </a>
 
     <div class="c-body">
       <h5 class="c-title">{{ $post->nom_objet}}</h5>
+
+      <a href="{{ route('posts.destroy', $post)}}">
+        Supprimmer
+      </a>
+
       <p class="c-text">
         {{ Str::limit($post->description, 50)}}
       </p>
       <p class="c-text">
-        mettre le user
+        {{ $post->user->name }}
       </p>
       <p class="c-text">
         {{ $post->created_at->format('d N Y')}}
       </p>
       <a href="{{ route('posts.show', $post)}}" class="btn btn-primary">Voir</a>
+      <a href="{{ route('posts.destroy', $post)}}">
+        Supprimmer
+      </a>
     </div>
 
   </div>
   @endforeach
+  <!-- <input type="submit" value="Supprimer"> -->
 
 </div>
 @include('layouts.footer')

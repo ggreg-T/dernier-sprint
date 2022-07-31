@@ -13,9 +13,13 @@
     </p>
 
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8" >
-        <img src="{{ asset('/storage/').$post->image }}" alt="chat">
+        <img src="{{ asset('storage/').$post->image }}" alt="chat">
         <div>
             {{ $post->description }}  
         </div>
-
+        <img src="url({{ $post->image }}) " alt="JARDINERIE">
+        <!-- supprimer  -->
+        <div class="inputBx">
+                        <a href="{{ route('posts.destroy', $post)}}"><input type="submit" value="Supprimer"></a>
+                    </div>
     </div>

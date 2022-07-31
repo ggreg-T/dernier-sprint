@@ -20,7 +20,6 @@ class PostController extends Controller
      */
     public function index()
     {
-
         $posts = Post::with('category', 'user')->latest()->get();
         return view('post.index', compact('posts'));
     }
