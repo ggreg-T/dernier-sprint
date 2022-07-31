@@ -30,7 +30,9 @@ h1 {
     top: 40px;
 }
 
-
+.c-body{
+    color: #F2A71C;
+}
 
 .galerie {
     display: flex;
@@ -44,10 +46,16 @@ h1 {
     /* border-width: 2rem; */
     border-radius: 10px;
 }
-
+.cardimg{
+    height: 50px;
+    width: 50px;
+}
 .item {
-    width: 300px;
-    height: 200px;
+    /* width: 500px;
+    height: 400px; */
+    
+    width: 300px; 
+    height: 300px;
     margin: 10px;
     overflow: hidden;
     /* on utilise flex-shrink pour pas que l'image rétrécisse  */
@@ -59,10 +67,11 @@ h1 {
     /* filter: drop-shadow(0 0 5px blue); */
 }
 
-.item img {
-    width: 100%;
+ .item img {
+    width: 60%;
     height: auto;
-}
+
+} 
 
 /* ########  FORMULAIRE ######## */
 
