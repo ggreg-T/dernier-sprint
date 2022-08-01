@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Auth;
 
 Route::resource('posts', PostController::class)->except('index');
 Route::get('deletepost/{idPost}', [PostController::class, 'destroy'])->name('deletPost');
+Route::get('updatePost/{idPost}', [PostController::class, 'update'])->name('updatePost');
 Auth::routes();
 Route::middleware(['auth'])->group(function(){
     

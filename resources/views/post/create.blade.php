@@ -31,7 +31,7 @@
     <section>
         <!-- partie image  -->
         <div class="imgBox">
-            <img src="{{URL::asset('/image/antique.jpg')}}" alt="pour">
+            <img src="{{URL::asset('/image/k7.jpg')}}" alt="pour">
         </div>
     <!-- partie formulaire  -->
         <div class="contentBox">

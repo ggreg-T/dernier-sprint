@@ -9,8 +9,7 @@
     <span class="block text-red-500">{{ $error }}</span>
     @endforeach
 
-    <form action="{{ route('posts.update', $post) }}" method="post" enctype="multipart/form-data">
-        @method('put')
+    <form action="{{ route('updatePost', $post->id) }}" method="get" enctype="multipart/form-data">
         @csrf
         <!-- nom objet  -->
         <label for="nom_objet" value="Titre du post">
@@ -22,7 +21,7 @@
         </label>
 
         <!-- image  -->
-        <label for="image" value="Image du post" >
+        <label for="image" value="{{ $post['image'] }}" >
         <input type="file" id="image" name="image" >
         </label>
 

@@ -11,6 +11,7 @@ use App\Models\User;
 use App\Models\Category;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
@@ -48,13 +49,23 @@ class PostController extends Controller
 
     public function store(StorePostRequest $request)
     {
-        // $imageName = $request->file('image')->store('public/post');
+        $id_category = Category::query()
+            ->where('id', '=', $request->category)
+            ->get();
+        $id_category = $id_category[0]->id;
+
         $imageName = $request->image->store('post');
+       
+;        // $imageName = $request->file('image')->store('public/post');
+        
         Post::create([
             'nom_objet' => $request->nom_objet,
             'description' => $request->description,
             'dco' => $request->dco,
-            'image' => $imageName
+            'image' => $imageName,
+            'user_id' => Auth::user()->id,
+            'category_id' => $id_category
+
         ]);
 
         return redirect()->route('dashboard')->with('success', 'Votre objet à bien été enregistré.');
@@ -79,13 +90,12 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        if (Gate::denies('update-post', $post)) {
-            abort(403);
-        }
-
         $categories = Category::all();
 
-        return view('post.edit', compact('post', 'categories'));
+        return view('post.edit', [
+            'categories' => $categories, 
+            'post' => $post
+        ]);
     }
 
     /**
@@ -95,15 +105,38 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,  Post $post, UpdatePostRequest $postUpdateAction)
-    // UpdatePostRequest $request,
+    // public function update(Request $request,  $id_post, UpdatePostRequest $postUpdateAction)
+    // // UpdatePostRequest $request,
+    // {
+    //     // if (Gate::denies('update-post', $post)) {
+    //     //     abort(403);
+    //     // }
+
+    //     $postUpdateAction->handle($request, $id_post);
+
+    //     return redirect()->route('dashboard')->with('success', 'Votre post a été modifié');
+    // }
+
+    public function update(Request $request,  $id_post)
     {
-        if (Gate::denies('update-post', $post)) {
-            abort(403);
+        // dd($request->image);
+        $id_category = Category::query()
+            ->where('id', '=', $request->category)
+            ->get();
+        $id_category = $id_category[0]->id;
+
+        // $imageName = $request->image->store('post');
+
+        try {
+            $post = Post::find($id_post);
+            $post->nom_objet = $request->nom_objet;
+            $post->description = $request->description;
+            // $post->image = $imageName;
+            $post->category_id = $id_category;
+            $post->save();
+        } catch (Exception $error) {
+            return redirect()->route('dashboard')->with('error', 'Problème d\'update!');
         }
-
-        $postUpdateAction->handle($request, $post);
-
         return redirect()->route('dashboard')->with('success', 'Votre post a été modifié');
     }
 
