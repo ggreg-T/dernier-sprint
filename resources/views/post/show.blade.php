@@ -18,6 +18,7 @@
             {{ $post->description }}  
         </div>
         <img src="url({{ $post->image }}) " alt="JARDINERIE">
+        <a href="{{ route('posts.edit', $post) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
         <!-- supprimer  -->
         <div class="inputBx">
                         <a href="{{ route('posts.destroy', $post)}}"><input type="submit" value="Supprimer"></a>

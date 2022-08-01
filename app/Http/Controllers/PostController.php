@@ -9,7 +9,9 @@ use App\Models\Post;
 use App\Models\User;
 
 use App\Models\Category;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -46,8 +48,8 @@ class PostController extends Controller
 
     public function store(StorePostRequest $request)
     {
-        $imageName = $request->file('image')->store('public/post');
-        // $imageName = $request->image->store('post');
+        // $imageName = $request->file('image')->store('public/post');
+        $imageName = $request->image->store('post');
         Post::create([
             'nom_objet' => $request->nom_objet,
             'description' => $request->description,
@@ -111,14 +113,25 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy(Post $post, $id_post)
     {
-        if (Gate::denies('delete-post', $post)) {
-            abort(403);
+        // if (Gate::denies('delete-post', $post)) {
+        //     abort(403);
+        // }
+
+        try {
+            DB::table('posts')
+                ->where('id', '=', $id_post)
+                ->delete();
+            return redirect()->back()
+                ->with('success', 'Post a été supprimé avec succès!');
+
+        } catch(Exception $error) {
+            return redirect()->back()
+                ->with('error', 'problème de suppression du post!');
         }
+        
 
-        $post->delete();
-
-        return redirect()->route('dashboard')->with('success', 'Votre post a été supprimé');
+        // return redirect()->route('dashboard')->with('success', 'Votre post a été supprimé');
     }
 }

@@ -11,13 +11,16 @@
 </div>
 <div class="galerie">
 
-  @foreach ($posts as $post)
+<div class="mx-5 my-2">
+        @if (session('success'))
+            <p class="alert alert-success mt-3">{{ session('success') }}</p>
+        @endif
+        @if (session('error'))
+            <p class="alert alert-danger mt-3">{{ session('error') }}</p>
+        @endif
+    </div>
 
-  @if(session('success'))
-  <div>
-    {{ session('success') }}
-  </div>
-  @endif <div class="item">
+  @foreach ($posts as $post)
 
     <a href="{{ route('posts.show', $post) }}"><img src="{{ URL::asset('/image/k77.jpg') }}" class="cardimg"></a>
     <!-- alt="{{URL::asset('/image/antique.jpg')}}" -->
@@ -35,7 +38,7 @@
  
       <a href="{{ route('posts.show', $post)}}" class="btn btn-primary">Voir</a>
 
-      <a href="{{ route('posts.destroy', $post)}}">
+      <a href="{{ route('deletPost', $post->id)}}">
         Supprimmer
       </a>
     </div>

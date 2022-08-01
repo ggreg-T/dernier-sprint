@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\dashController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,8 @@ use App\Http\Controllers\dashController;
 
 
 Route::resource('posts', PostController::class)->except('index');
-
+Route::get('deletepost/{idPost}', [PostController::class, 'destroy'])->name('deletPost');
+Auth::routes();
 Route::middleware(['auth'])->group(function(){
     
     Route::get('/', [PostController::class, 'index'])->name('posts.index');
@@ -38,6 +40,6 @@ Route::get('/index', function () {
 
 require __DIR__.'/auth.php';
 
-Auth::routes();
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
